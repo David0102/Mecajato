@@ -1,2 +1,2 @@
 # Mecajato
-Sistema para oficinas de automóveis utilizando Django.
+Sistema de gerenciamneto de oficinas de automóveis utilizando Django.
