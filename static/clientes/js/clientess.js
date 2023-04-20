@@ -62,18 +62,33 @@ function dados_cliente() {
     }).then(function (data) {
 
         document.getElementById('form-att-cliente').style.display = "block"
+        document.getElementById('nome').value = data['cliente']['nome']
+        document.getElementById('sobrenome').value = data['cliente']['sobrenome']
+        email = document.getElementById('email').value = data['cliente']['email']
+        cpf = document.getElementById('cpf').value = data['cliente']['cpf']
 
-        nome = document.getElementById('nome')
-        nome.value = data['nome']
+        div_carros = document.getElementById('carros')
+        div_carros.innerHTML = ""
 
-        sobrenome = document.getElementById('sobrenome')
-        sobrenome.value = data['sobrenome']
+        for (i = 0; i < data['carros'].length; i++) {
 
-        email = document.getElementById('email')
-        email.value = data['email']
+            div_carros.innerHTML += "<form action='/clientes/update_carro/" + data['carros'][i]['id'] + "' method='POST'>\
+                <div class='row'>\
+                    <div class='col-md'>\
+                        <input type='text' class='form-control' name='carro' value='" + data['carros'][i]['fields']['carro'] + "'>\
+                    </div>\
+                    <div class='col-md'>\
+                        <input type='text' class='form-control' name='placa' value='" + data['carros'][i]['fields']['placa'] + "'>\
+                    </div>\
+                    <div class='col-md'>\
+                        <input type='text' class='form-control' name='ano' value='" + data['carros'][i]['fields']['ano'] + "'>\
+                    </div>\
+                    <div class='col-md'>\
+                        <input type='submit' class='btn btn-success' value='Salvar'>\
+                    </div>\
+                </div><br>"
 
-        cpf = document.getElementById('cpf')
-        cpf.value = data['cpf']
+        }
 
     })
 }
