@@ -83,8 +83,12 @@ function dados_cliente() {
                     <div class='col-md'>\
                         <input type='text' class='form-control' name='ano' value='" + data['carros'][i]['fields']['ano'] + "'>\
                     </div>\
-                    <div class='col-md'>\
+                    <div class='col-1'>\
                         <input type='submit' class='btn btn-success' value='Salvar'>\
+                    </div>\
+                    </form>\
+                    <div class='col-md'>\
+                    <a class='btn btn-danger' href='/clientes/excluir_carro/"+ data['carros'][i]['id'] + "'>Excluir</a>\
                     </div>\
                 </div><br>"
 
