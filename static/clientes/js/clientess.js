@@ -99,6 +99,7 @@ function dados_cliente() {
 }
 
 function update_cliente() {
+    csrf_token = document.querySelector('[name=csrfmiddlewaretoken]').value
     nome = document.getElementById('nome').value
     sobrenome = document.getElementById('sobrenome').value
     email = document.getElementById('email').value
@@ -138,4 +139,31 @@ function update_cliente() {
         }
     })
 
+}
+
+function excluir_cliente() {
+    csrf_token = document.querySelector('[name=csrfmiddlewaretoken]').value
+    id = document.getElementById('id').value
+
+    data = new FormData()
+    data.append('id', id)
+
+    fetch("/clientes/excluir_cliente/", {
+        method: "POST",
+        headers: {
+            'X-CSRFToken': csrf_token,
+        },
+        body: data
+    }).then(function (result) {
+        return result.json()
+
+    }).then(function (data) {
+        if (data['status'] == 'ok') {
+            window.location.href = "/clientes"
+            console.log("Cliente excluído!")
+        } else {
+            window.location.href = "/clientes"
+            console.log("Erro ao excluir cliente!")
+        }
+    })
 }

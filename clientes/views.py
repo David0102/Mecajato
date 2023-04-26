@@ -43,7 +43,7 @@ def clientes(request):
             car = Carro(carro = carro, placa = placa, ano = ano, cliente = cliente)
             car.save()
 
-        return HttpResponse('teste')
+        return redirect(reverse('clientes'))
 
     
 
@@ -116,3 +116,12 @@ def update_cliente(request, id):
         return JsonResponse({'status': '500'})
 
 
+def excluir_cliente(request):
+    id = request.POST.get('id')
+
+    try:
+        cliente = Cliente.objects.get(id=id)
+        cliente.delete()
+        return JsonResponse({'status': 'ok'})
+    except:
+        return JsonResponse({'status': 'erro'})

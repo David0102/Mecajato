@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block 'head' %}
+
+<link rel="stylesheet" href="{% static 'clientes/css/clientes.css' %}">
+<link rel="stylesheet" href="{% static 'servico/css/servico.css' %}">
+
+{% endblock %}
+
+{% block 'dashboard' %}
+
+<div class="container">
+    <div class="row">
+        <div onclick="exibir_form_servico('1')" class="col-md card-dashboard">
+            <p class="text-card">Adcionar serviço</p>
+        </div>
+
+        <div onclick="exibir_form_servico('2')" class="col-md card-dashboard">
+            <p class="text-card">Listar serviços</p>
+        </div>
+    </div>
+    <br>
+    <div id="form_servico">
+        <h2>Novo serviço</h2>
+        <hr class="bg-light">
+        <form action="{% url 'novo_servico' %}" method="POST">{% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="btn btn-success col-2" value="Salvar">
+        </form>
+    </div>
+    <div id="teste">
+        teste
+    </div>
+    <br>
+</div>
+<script src="{% static 'servico/js/servico.js' %}"></script>
+{% endblock %}
