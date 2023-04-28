@@ -24,13 +24,10 @@
     <div id="form_servico">
         <h2>Novo serviço</h2>
         <hr class="bg-light">
-        <form action="{% url 'novo_servico' %}" method="POST">{% csrf_token %}
+        <form action="{% url 'servicos' %}" method="POST">{% csrf_token %}
             {{form.as_p}}
             <input type="submit" class="btn btn-success col-2" value="Salvar">
         </form>
-    </div>
-    <div id="teste">
-        teste
     </div>
     <br>
 </div>
