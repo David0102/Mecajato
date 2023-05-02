@@ -1,0 +1,27 @@
+#login {
+    margin-top: 100px;
+    margin-left: 320px;
+    width: 410px;
+    height: 280px;
+}
+
+#form-login {
+    width: 400px;
+    height: 270px;
+}
+
+p {
+    color: white;
+}
+
+#cadastro {
+    margin-top: 80px;
+    margin-left: 320px;
+    width: 410px;
+    height: 370px;
+}
+
+#form-cadastro {
+    width: 400px;
+    height: 360px;
+}

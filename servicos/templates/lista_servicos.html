@@ -4,6 +4,7 @@
 {% block 'head' %}
 
 <link rel="stylesheet" href="{% static 'clientes/css/clientes.css' %}">
+<link rel="stylesheet" href="{% static 'servico/css/servicoo.css' %}">
 
 {% endblock %}
 
@@ -11,7 +12,7 @@
 <br>
 <br>
 <div class="container-fluid">
-    <h2>Lista de serviços</h2>
+    <h2 class="col-md">Lista de serviços</h2>
     <br>
     <table class="table table-dark">
         <thead>
@@ -31,10 +32,10 @@
                 <td>{{servico.titulo}}</td>
                 <td>{{servico.cliente}}</td>
                 <td>
-                    {% if servico.finalizado %}
-                    <span class="badge badge-success">Finalizado</span>
+                    {% if not servico.finalizado %}
+                    <span class="badge badge-info">Em manutencao</span>
                     {% else %}
-                    <span class="badge badge-info">Em manutenção</span>
+                    <span class="badge badge-success">Finalizado</span>
                     {% endif %}
                 </td>
                 <td>{{servico.preco_total}}</td>
@@ -43,5 +44,5 @@
         </tbody>
     </table>
 </div>
-
+<script src="{% static 'servico/js/servicoo.js' %}"></script>
 {% endblock %}

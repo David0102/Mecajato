@@ -1,0 +1,29 @@
+{% extends "base_user.html" %}
+{% load static %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'usuarios/css/usuarioss.css' %}">
+{% endblock %}
+
+{% block 'dashboard' %}
+<br>
+<br>
+<div class="container">
+    <div id="cadastro">
+        <form id="form-cadastro" action="{% url 'cadastro' %}" class="form-control bg-dark" method="POST">
+            {% csrf_token%}
+            <p>Usuário: </p>
+            <input type=" text" class="form-control" name="usuario" required>
+            <br>
+            <p>Email: </p>
+            <input type=" text" class="form-control" name="email">
+            <br>
+            <p>Criar senha: </p>
+            <input type="password" class="form-control" name="senha" required>
+            <br>
+            <input type="submit" value="Cadastrar" class="btn btn-success form-control">
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}

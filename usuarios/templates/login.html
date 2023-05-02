@@ -1,0 +1,25 @@
+{% extends "base_user.html" %}
+{% load static %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'usuarios/css/usuarioss.css' %}">
+{% endblock %}
+
+{% block 'dashboard' %}
+<br>
+<br>
+<div class="container">
+    <div id="login">
+        <form id="form-login" action="{% url 'login' %}" class="form-control bg-dark" method="POST">{% csrf_token %}
+            <p>Usuário: </p>
+            <input type=" text" class="form-control" name="usuario" required>
+            <br>
+            <p>Senha: </p>
+            <input type="password" class="form-control" name="senha" required>
+            <br>
+            <input type="submit" value="Login" class="btn btn-success form-control">
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block 'head' %}
+
+<link rel="stylesheet" href="{% static 'clientes/css/clientes.css' %}">
+
+{% endblock %}
+
+{% block 'dashboard' %}
+<div class="container">
+    <div class="row">
+        <div onclick="clientes_servicos('1')" class="col-md card-dashboard">
+            <p class="text-card">Clientes</p>
+        </div>
+
+        <div onclick="clientes_servicos('2')" class="col-md card-dashboard">
+            <p class="text-card">Serviços</p>
+        </div>
+    </div>
+</div>
+<script src="{% static 'usuarios/js/usuarios.js' %}"></script>
+{% endblock %}

@@ -10,8 +10,11 @@ from django.shortcuts import redirect, get_object_or_404
 
 def clientes(request):
     if request.method == "GET":
-        clientes_list = Cliente.objects.all()
-        return render(request, 'clientes.html', {'clientes': clientes_list})
+        if request.user.is_authenticated:
+            clientes_list = Cliente.objects.all()
+            return render(request, 'clientes.html', {'clientes': clientes_list})
+        else:
+            return redirect(reverse('login'))
     
     elif request.method == "POST":
         nome = request.POST.get('nome')

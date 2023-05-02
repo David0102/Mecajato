@@ -11,8 +11,14 @@
 <br>
 <br>
 <div class="container">
-    <a href="{% url 'gerar_os' servico.identificador %}">Gerar OS</a>
     <br>
-    {{servico.titulo}}
+    <div class="card bg-dark">
+        <h5 class="card-header">{{servico.cliente}}</h5>
+        <div class="card-body">
+            <p class="card-title">{{servico.titulo}}</p>
+            <hr>
+            <a class="btn btn-info" href="{% url 'gerar_os' servico.identificador %}">Gerar odem de serviço</a>
+        </div>
+    </div>
 </div>
 {% endblock %}
