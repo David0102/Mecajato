@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
 from django.shortcuts import redirect
 
@@ -47,7 +47,9 @@ def cadastro(request):
 
         return redirect(reverse('login'))
         
-        
+def logout_user(request):
+    logout(request)
+    return redirect(reverse('login'))
         
 
         
