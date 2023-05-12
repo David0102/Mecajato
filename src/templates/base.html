@@ -25,23 +25,44 @@
         </div>
         <ul class="nav-list">
             <li>
-                <a href="{% url 'cadastro' %}">
-                    <i class='bx bx-user-plus'></i>
-                    <span class="links_name">Cadastro</span>
+                <a href="{% url 'home' %}">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Home</span>
                 </a>
-                <span class="tooltip">Cadastro</span>
+                <span class="tooltip">Home</span>
             </li>
             <li>
-                <a href="{% url 'login' %}">
+                <a href="{% url 'clientes' %}">
                     <i class='bx bx-user'></i>
-                    <span class="links_name">Login</span>
+                    <span class="links_name">Clientes</span>
                 </a>
-                <span class="tooltip">Login</span>
+                <span class="tooltip">Clientes</span>
+            </li>
+            <li>
+                <a href="{% url 'servicos' %}">
+                    <i class='bx bx-chat'></i>
+                    <span class="links_name">Serviços</span>
+                </a>
+                <span class="tooltip">Serviços</span>
+            </li>
+            <li>
+                <a href="{% url 'cadastro' %}">
+                    <i class='bx bx-user-plus'></i>
+                    <span class="links_name">Cadastrar usuários</span>
+                </a>
+                <span class="tooltip">Cadastrar usuários</span>
+            </li>
+            <li>
+                <a href="{% url 'logout' %}">
+                    <i class='bx bx-run'></i>
+                    <span class="links_name">Sair</span>
+                </a>
+                <span class="tooltip">Sair</span>
             </li>
         </ul>
     </div>
 
-    <section class="home-section">
+    <section class="home-section ">
         {% block 'dashboard'%}
         {% endblock %}
 

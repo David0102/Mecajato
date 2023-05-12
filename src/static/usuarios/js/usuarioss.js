@@ -4,5 +4,11 @@ function clientes_servicos(tipo) {
 
     } else if (tipo == '2') {
         window.location.href = "/servicos/"
+
+    } else if (tipo == '3') {
+        window.location.href = "/usuarios/cadastro"
+
+    } else {
+        window.location.href = "/usuarios/logout"
     }
 }

@@ -30,7 +30,10 @@ def login_user(request):
 
 def cadastro(request):
     if request.method == 'GET':
-        return render(request, 'cadastro.html')
+        if request.user.is_authenticated:
+            return render(request, 'cadastro.html')
+        else:
+            return redirect(reverse('login'))
     
     elif request.method == 'POST':
         usuario = request.POST.get('usuario')
