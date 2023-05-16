@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'mecajato.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'mecajato',
         'USER': os.environ['user'],
         'PASSWORD': os.environ['password'],
