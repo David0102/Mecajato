@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('painel/', admin.site.urls),
@@ -7,3 +8,4 @@ urlpatterns = [
     path('servicos/', include('servicos.urls')),
     path('usuarios/', include('usuarios.urls')),
 ]
+urlpatterns += staticfiles_urlpatterns()

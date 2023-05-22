@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import dj_database_url
 
 load_dotenv()
 
@@ -82,14 +83,7 @@ WSGI_APPLICATION = 'mecajato.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mecajato',
-        'USER': os.environ['user'],
-        'PASSWORD': os.environ['password'],
-        'HOST': os.environ['host'],
-        'PORT': os.environ['port'],
-    }
+    'default': dj_database_url.parse(os.environ['URL_DATABASE'])
 }
 
 

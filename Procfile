@@ -1,1 +1,1 @@
-web: gunicorn mecajato.wsgi --log-file -
+web: gunicorn app:app
