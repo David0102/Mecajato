@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from .models import Cliente, Carro
 import re
@@ -81,7 +81,7 @@ def update_carro(request, id):
     carro.placa = placa_carro
     carro.ano = ano_carro
     carro.save()
-    return HttpResponse('Dados alterados!')
+    return redirect(reverse("clientes"))
 
 def excluir_carro(request, id):
     try:
@@ -115,6 +115,7 @@ def update_cliente(request, id):
         cliente.cpf = cpf
         cliente.save()
         return JsonResponse({'status': '200', 'nome': nome, 'sobrenome': sobrenome, 'email': email, 'cpf': cpf})
+        return redirect()
     except:
         return JsonResponse({'status': '500'})
 

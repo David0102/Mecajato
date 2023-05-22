@@ -48,7 +48,7 @@ def cadastro(request):
         user = User.objects.create_user(username=usuario, email=email, password=senha)
         user.save()
 
-        return redirect(reverse('login'))
+        return redirect(reverse('home'))
         
 def logout_user(request):
     logout(request)

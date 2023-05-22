@@ -20,7 +20,7 @@ def servicos(request):
 
         if form.is_valid():
             form.save()
-            return HttpResponse("Salvo com suceso!")
+            return redirect(reverse('servicos'))
         else:
             return render(request, 'servicos.html', {'form': form})
 

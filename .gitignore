@@ -1,2 +1,11 @@
+__pycache__
+
 .env
+
 venv
+
+*.*~
+
+*.pyc
+
+.idea
